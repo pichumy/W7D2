@@ -1,10 +1,17 @@
-const fetchTodos = () => {
+export const fetchTodos = () => {
   return $.ajax({
   method: 'GET',
   url: '/api/todos'
-}).then(
-  todos => console.log(todos)
-);
+});
 };
 
-export default fetchTodos;
+export const createTodo = (todo) => {
+  console.log(todo);
+  return $.ajax({
+    method: 'POST',
+    url: '/api/todos',
+    data: {
+      todo: todo
+    }
+  });
+};

@@ -9,16 +9,14 @@ class Api::TodosController < ApplicationController
   end
 
   def create
-    def create
   @todo = Todo.new(todo_params)
-  @todo.done = false; 
+  @todo.done = false;
   if @todo.save
     render json: @todo
   else
     render json: @todo.errors.full_messages, status: 422
   end
 end
-  end
 
   def update
     @todo = Todo.find(params[:id])

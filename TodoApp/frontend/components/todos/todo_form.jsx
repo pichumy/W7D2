@@ -17,11 +17,8 @@ class TodoForm extends React.Component {
     let title = this.state.title;
     let body = this.state.body;
     let todo = {id: uniqueId(),title: title, body:body};
-    this.props.receiveTodo(todo);
-    this.setState({
-      body: "",
-      title: ""
-    });
+    console.log(todo);
+    this.props.createTodo(todo).then(() => this.setState({body: "",title: ""}));
   }
 
   handleChange(event){

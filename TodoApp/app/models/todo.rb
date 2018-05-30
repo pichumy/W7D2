@@ -11,6 +11,7 @@
 #
 
 class Todo < ApplicationRecord
-  validates :title, :body, presence:true
+  validates :title, presence: {message: "can't be blank "}
+  validates :body, presence: {message: "can't be blank "}
   validates :done, inclusion: { in: [true, false] }
 end
